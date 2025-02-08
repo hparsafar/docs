@@ -1,0 +1,6798 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Polareum.Waas.Server",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/cardano/balance": {
+      "get": {
+        "tags": [
+          "Cardano"
+        ],
+        "summary": "Returns native currency token balance",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cardano/transfer": {
+      "post": {
+        "tags": [
+          "Cardano"
+        ],
+        "summary": "Transfers native token from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cardano_TransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cardano_TransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Cardano_TransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cardano/status": {
+      "get": {
+        "tags": [
+          "Cardano"
+        ],
+        "summary": "Returns transaction status for Cardano networks",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TransactionHash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/erc20/balance": {
+      "get": {
+        "tags": [
+          "Erc20"
+        ],
+        "summary": "Returns erc20 currency token balance",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TokenRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BigInteger"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/erc20/total-supply": {
+      "get": {
+        "tags": [
+          "Erc20"
+        ],
+        "summary": "Returns total supply of the token",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TokenRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BigInteger"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/erc20/transfer": {
+      "post": {
+        "tags": [
+          "Erc20"
+        ],
+        "summary": "Transfers erc20 token amount from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc20_TransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc20_TransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc20_TransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/erc20/transfer-from": {
+      "post": {
+        "tags": [
+          "Erc20"
+        ],
+        "summary": "transfers from source (other than owner wallet) to destination address",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc20_TransferFromRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc20_TransferFromRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc20_TransferFromRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/erc20/allowance": {
+      "get": {
+        "tags": [
+          "Erc20"
+        ],
+        "summary": "Get how much spender is allowed to spend owner's token",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TokenRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "SourceWalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "SpenderRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BigInteger"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/erc20/approve": {
+      "post": {
+        "tags": [
+          "Erc20"
+        ],
+        "summary": "Approves erc20 token amount from owner to spender",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc20_ApproveRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc20_ApproveRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc20_ApproveRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/erc721/deploy": {
+      "post": {
+        "tags": [
+          "Erc721"
+        ],
+        "summary": "Returns tx hash after deploying collection",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc721_DeployCollectionRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc721_DeployCollectionRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc721_DeployCollectionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/erc721/mint": {
+      "post": {
+        "tags": [
+          "Erc721"
+        ],
+        "summary": "Returns tx hash after minting token",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc721_MintRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc721_MintRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc721_MintRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/erc721/burn": {
+      "post": {
+        "tags": [
+          "Erc721"
+        ],
+        "summary": "Returns tx hash after burning token",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc721_BurnRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc721_BurnRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc721_BurnRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/erc721/transfer": {
+      "post": {
+        "tags": [
+          "Erc721"
+        ],
+        "summary": "Returns tx hash after transfering token",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc721_TransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc721_TransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Erc721_TransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/evm/balance": {
+      "get": {
+        "tags": [
+          "Evm"
+        ],
+        "summary": "Returns native currency token balance, equal to eth_balance",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/evm/transfer": {
+      "post": {
+        "tags": [
+          "Evm"
+        ],
+        "summary": "Transfers native token from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Evm_TransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Evm_TransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Evm_TransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/evm/status": {
+      "get": {
+        "tags": [
+          "Evm"
+        ],
+        "summary": "Returns transaction status for evm based networks",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TransactionHash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Evm_TransactionReceiptDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Evm_TransactionReceiptDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Evm_TransactionReceiptDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/polkadot/balance": {
+      "get": {
+        "tags": [
+          "Polkadot"
+        ],
+        "summary": "Returns native currency token balance",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/polkadot/transfer": {
+      "post": {
+        "tags": [
+          "Polkadot"
+        ],
+        "summary": "Transfers native token from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Polkadot_TransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Polkadot_TransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Polkadot_TransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/polkadot/status": {
+      "get": {
+        "tags": [
+          "Polkadot"
+        ],
+        "summary": "Returns transaction status for Polkadot networks",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ExtrinsicHash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockHash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ripple/balance": {
+      "get": {
+        "tags": [
+          "Ripple"
+        ],
+        "summary": "Returns native currency token balance",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ripple/transfer": {
+      "post": {
+        "tags": [
+          "Ripple"
+        ],
+        "summary": "Transfers native token from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ripple_TransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ripple_TransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ripple_TransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ripple/status": {
+      "get": {
+        "tags": [
+          "Ripple"
+        ],
+        "summary": "Returns transaction status for Ripple networks",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TransactionHash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ripple/active-account": {
+      "post": {
+        "tags": [
+          "Ripple"
+        ],
+        "summary": "active account with wallet sponsorship",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ripple_ActivateAccountRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ripple_ActivateAccountRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ripple_ActivateAccountRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/solana/balance": {
+      "get": {
+        "tags": [
+          "Solana"
+        ],
+        "summary": "Returns native currency token balance",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/solana/transfer": {
+      "post": {
+        "tags": [
+          "Solana"
+        ],
+        "summary": "Transfers native token from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Solana_TransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Solana_TransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Solana_TransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/solana/status": {
+      "get": {
+        "tags": [
+          "Solana"
+        ],
+        "summary": "Returns transaction status for Solana networks",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TransactionHash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonNode"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonNode"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/JsonNode"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/spl/balance": {
+      "get": {
+        "tags": [
+          "SplToken"
+        ],
+        "summary": "Returns SplToken currency token balance",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TokenRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/spl/transfer": {
+      "post": {
+        "tags": [
+          "SplToken"
+        ],
+        "summary": "Transfers Spl token amount from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SplToken_TransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SplToken_TransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SplToken_TransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/spl/create-token-account": {
+      "post": {
+        "tags": [
+          "SplToken"
+        ],
+        "summary": "Create Spl token account for destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SplToken_CreateTokenAccountRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SplToken_CreateTokenAccountRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SplToken_CreateTokenAccountRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/spl/create-token-account-and-transfer": {
+      "post": {
+        "tags": [
+          "SplToken"
+        ],
+        "summary": "Create spl Token Account for destination abd Transfers token amount from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SplToken_CreateTokenAccountAndTransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SplToken_CreateTokenAccountAndTransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SplToken_CreateTokenAccountAndTransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellar/transfer": {
+      "post": {
+        "tags": [
+          "Stellar"
+        ],
+        "summary": "Transfers native token from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_TransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_TransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_TransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellar/active-account": {
+      "post": {
+        "tags": [
+          "Stellar"
+        ],
+        "summary": "active account with wallet sponsorship",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_ActiveAccountRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_ActiveAccountRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_ActiveAccountRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellar/balance": {
+      "get": {
+        "tags": [
+          "Stellar"
+        ],
+        "summary": "Returns stellar balance",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Balance"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Balance"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Balance"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellar/status": {
+      "get": {
+        "tags": [
+          "Stellar"
+        ],
+        "summary": "Returns transaction status for stellar based networks",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TransactionId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellar/fee-bump-transaction": {
+      "post": {
+        "tags": [
+          "Stellar"
+        ],
+        "summary": "Transfers native token from source to destination, enable an other account to pay the transaction fees",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_FeeBumpRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_FeeBumpRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_FeeBumpRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellar-asset/add-trust-line": {
+      "post": {
+        "tags": [
+          "StellarAsset"
+        ],
+        "summary": "add trust line",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_AddTrustlineRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_AddTrustlineRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_AddTrustlineRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellar-asset/balance": {
+      "get": {
+        "tags": [
+          "StellarAsset"
+        ],
+        "summary": "Returns stellar balance",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Code",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Issuer",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Balance"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Balance"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Balance"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellar-asset/total-supply": {
+      "get": {
+        "tags": [
+          "StellarAsset"
+        ],
+        "summary": "Returns total supply of the token",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Code",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Issuer",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellar-asset/transfer": {
+      "post": {
+        "tags": [
+          "StellarAsset"
+        ],
+        "summary": "Transfers stellar asset from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_TransferAssetRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_TransferAssetRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Stellar_TransferAssetRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubmitTransactionResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tokens": {
+      "get": {
+        "tags": [
+          "Tokens"
+        ],
+        "summary": "Returns all Tokens configured inside the system",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TokenDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TokenDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/TokenDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/balance": {
+      "get": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns native currency token balance of Ton network",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/transfer": {
+      "post": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Transfers native token from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_TransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_TransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_TransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/status": {
+      "get": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns transaction status for Ton network",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TransactionHash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TokenMaster",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/batch-status": {
+      "post": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns batch transaction status for Ton network",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_GetBatchStatusRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_GetBatchStatusRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_GetBatchStatusRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/transaction-tree": {
+      "get": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns transaction tree for Ton network",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TransactionHash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TokenMaster",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionNodeDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionNodeDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionNodeDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/batch-transaction-tree": {
+      "post": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns batch transaction tree for Ton network",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_GetBatchStatusRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_GetBatchStatusRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_GetBatchStatusRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionTreeDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionTreeDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionTreeDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/transfer-summary-prev": {
+      "get": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns token transfer overview for Ton network",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TransactionHash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TokenMaster",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_SimpleTransferReceiptDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_SimpleTransferReceiptDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_SimpleTransferReceiptDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/transfer-summary": {
+      "get": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns token transfer overview for Ton network",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TransactionHash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TokenMaster",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_SimpleTransferReceiptDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_SimpleTransferReceiptDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_SimpleTransferReceiptDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/batch-transfer-summary-prev": {
+      "post": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns batch token transfer overview for Ton network",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_GetBatchStatusRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_GetBatchStatusRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_GetBatchStatusRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransferSummaryDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransferSummaryDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransferSummaryDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/batch-transfer-summary": {
+      "post": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns batch token transfer overview for Ton network",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_GetBatchStatusRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_GetBatchStatusRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Ton_GetBatchStatusRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransferSummaryDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransferSummaryDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransferSummaryDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/status-by-message-hash": {
+      "get": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns transaction status for Ton network",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "MessageHash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/token-transfers-prev": {
+      "get": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns token transfers of an address in Ton Network with pagination (256 transactions per page)",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TokenMaster",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Address",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Pagination",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransferSummaryDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransferSummaryDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransferSummaryDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/token-transfers": {
+      "get": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns token transfers of an address in Ton Network with pagination (256 transactions per page)",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TokenMaster",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Address",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Pagination",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_SimpleTransferReceiptDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_SimpleTransferReceiptDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_SimpleTransferReceiptDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/token-transactions": {
+      "get": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns token transactions of an address in Ton Network with pagination (256 transactions per page)",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TokenMaster",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Address",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Pagination",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/ton-transfers": {
+      "get": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns ton transfers of an address in Ton Network with pagination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Address",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "Pagination",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/last-block": {
+      "get": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns last block metadata and transactions for Ton network",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockWorkchain",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ton_BlockMetadataDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ton_BlockMetadataDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Ton_BlockMetadataDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/trc20/balance": {
+      "get": {
+        "tags": [
+          "Trc20"
+        ],
+        "summary": "Returns trc20 currency token balance",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TokenRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/trc20/transfer": {
+      "post": {
+        "tags": [
+          "Trc20"
+        ],
+        "summary": "Transfers trc20 token amount from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Trc20_TransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Trc20_TransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Trc20_TransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/trc20/status": {
+      "get": {
+        "tags": [
+          "Trc20"
+        ],
+        "summary": "Returns transaction status for trc20 based networks",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TransactionId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/trc20/total-supply": {
+      "get": {
+        "tags": [
+          "Trc20"
+        ],
+        "summary": "Returns total supply of the token",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TokenRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tron/transfer": {
+      "post": {
+        "tags": [
+          "Tron"
+        ],
+        "summary": "Transfers native token from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tron_TransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tron_TransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tron_TransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tron/balance": {
+      "get": {
+        "tags": [
+          "Tron"
+        ],
+        "summary": "Returns trx balance",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tron/status": {
+      "get": {
+        "tags": [
+          "Tron"
+        ],
+        "summary": "Returns transaction status for tron based networks",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TransactionId",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TransactionInfo"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/utxo/balance": {
+      "get": {
+        "tags": [
+          "Utxo"
+        ],
+        "summary": "Returns native currency token balance",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/utxo/transfer": {
+      "post": {
+        "tags": [
+          "Utxo"
+        ],
+        "summary": "Transfers native token from source to destination",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utxo_TransferRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utxo_TransferRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utxo_TransferRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/utxo/status": {
+      "get": {
+        "tags": [
+          "Utxo"
+        ],
+        "summary": "Returns transaction status for Utxo networks",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "TransactionHash",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utxo_TransactionStatusDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utxo_TransactionStatusDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Utxo_TransactionStatusDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/utxo/list-unspent": {
+      "get": {
+        "tags": [
+          "Utxo"
+        ],
+        "summary": "Returns unspent list of address",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "BlockchainRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "NetworkRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "WalletRef",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Utxo_UnspentDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Utxo_UnspentDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Utxo_UnspentDto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/utxo/inject-address": {
+      "post": {
+        "tags": [
+          "Utxo"
+        ],
+        "summary": "injects address to node",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utxo_InjectAddressRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utxo_InjectAddressRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utxo_InjectAddressRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/utxo/send": {
+      "post": {
+        "tags": [
+          "Utxo"
+        ],
+        "summary": "Sends transaction with tx Hash",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utxo_SendTransactionRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utxo_SendTransactionRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Utxo_SendTransactionRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wallets/import/mnemonic": {
+      "post": {
+        "tags": [
+          "Wallets"
+        ],
+        "summary": "Imports wallet using mnemonics",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromMnemonicsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromMnemonicsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromMnemonicsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wallets/import/privatekey": {
+      "post": {
+        "tags": [
+          "Wallets"
+        ],
+        "summary": "Imports a wallet using private key",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromPrivateKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromPrivateKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromPrivateKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wallets/import/cborhex": {
+      "post": {
+        "tags": [
+          "Wallets"
+        ],
+        "summary": "Imports a wallet using private key",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromCborHexRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromCborHexRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromCborHexRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wallets/import/secret": {
+      "post": {
+        "tags": [
+          "Wallets"
+        ],
+        "summary": "Imports a wallet using secret key",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromSecretKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromSecretKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromSecretKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wallets/import/keyid": {
+      "post": {
+        "tags": [
+          "Wallets"
+        ],
+        "summary": "Imports a wallet using current kms key id",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromKeyIdRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromKeyIdRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportWalletFromKeyIdRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wallets/derive": {
+      "post": {
+        "tags": [
+          "Wallets"
+        ],
+        "summary": "Devie Wallet from current existing wallet id request",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeriveWalletRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeriveWalletRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeriveWalletRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/wallets/create": {
+      "post": {
+        "tags": [
+          "Wallets"
+        ],
+        "summary": "Creates new wallet by random private key",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateWalletRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateWalletRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateWalletRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "format": "uuid"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AccountResponseLink": {
+        "type": "object",
+        "properties": {
+          "href": {
+            "type": "string",
+            "nullable": true
+          },
+          "uri": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "readOnly": true
+          },
+          "templated": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Asset": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Balance": {
+        "type": "object",
+        "properties": {
+          "assetType": {
+            "type": "string",
+            "nullable": true
+          },
+          "assetCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "assetIssuer": {
+            "type": "string",
+            "nullable": true
+          },
+          "asset": {
+            "$ref": "#/components/schemas/Asset"
+          },
+          "limit": {
+            "type": "string",
+            "nullable": true
+          },
+          "balanceString": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "buyingLiabilities": {
+            "type": "string",
+            "nullable": true
+          },
+          "sellingLiabilities": {
+            "type": "string",
+            "nullable": true
+          },
+          "isAuthorized": {
+            "type": "boolean"
+          },
+          "isAuthorizedToMaintainLiabilities": {
+            "type": "boolean"
+          },
+          "liquidityPoolId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "BigInteger": {
+        "type": "object",
+        "properties": {
+          "isPowerOfTwo": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isZero": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isOne": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "isEven": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "sign": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CallValueInfo": {
+        "type": "object",
+        "properties": {
+          "callValue": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "tokenId": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cardano_TransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateWalletRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "kmsRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "keyExportable": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeriveWalletRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "kmsRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "parentWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "keyExportable": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EffectResponsePageLink": {
+        "type": "object",
+        "properties": {
+          "href": {
+            "type": "string",
+            "nullable": true
+          },
+          "uri": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "readOnly": true
+          },
+          "templated": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Erc20_ApproveRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "spenderRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "gasFeeinWei": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Erc20_TransferFromRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "ownerWalletId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "sourcePublicRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationPublicRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "tokenRef": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Erc20_TransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "gasFeeinWei": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Erc721_BurnRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "collectionAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenId": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "gasFeeinWei": {
+            "type": "string",
+            "nullable": true
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Erc721_DeployCollectionRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "symbol": {
+            "type": "string",
+            "nullable": true
+          },
+          "isAutoIncrement": {
+            "type": "boolean"
+          },
+          "isBurnable": {
+            "type": "boolean"
+          },
+          "isEnumerable": {
+            "type": "boolean"
+          },
+          "gasFeeinWei": {
+            "type": "string",
+            "nullable": true
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Erc721_MintRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "collectionAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "isAutoIncrement": {
+            "type": "boolean"
+          },
+          "tokenId": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "metaDataUri": {
+            "type": "string",
+            "nullable": true
+          },
+          "gasFeeinWei": {
+            "type": "string",
+            "nullable": true
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Erc721_TransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "collectionAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenId": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "gasFeeinWei": {
+            "type": "string",
+            "nullable": true
+          },
+          "callBackUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Evm_TransactionReceiptDto": {
+        "type": "object",
+        "properties": {
+          "transactionHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionIndex": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "blockHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "blockNumber": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "from": {
+            "type": "string",
+            "nullable": true
+          },
+          "to": {
+            "type": "string",
+            "nullable": true
+          },
+          "cumulativeGasUsed": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "gasUsed": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "effectiveGasPrice": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "status": {
+            "$ref": "#/components/schemas/Evm_TransactionStatus"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Evm_TransactionStatus": {
+        "enum": [
+          "Success",
+          "Failure",
+          "Pending"
+        ],
+        "type": "string"
+      },
+      "Evm_TransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amountInEther": {
+            "type": "number",
+            "format": "double"
+          },
+          "gasPriceGwei": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "gasInWei": {
+            "$ref": "#/components/schemas/BigInteger"
+          },
+          "nonce": {
+            "$ref": "#/components/schemas/BigInteger"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Extras": {
+        "type": "object",
+        "properties": {
+          "envelopeXdr": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultXdr": {
+            "type": "string",
+            "nullable": true
+          },
+          "extrasResultCodes": {
+            "$ref": "#/components/schemas/ResultCodes"
+          }
+        },
+        "additionalProperties": false
+      },
+      "FeeBumpTransaction": {
+        "type": "object",
+        "properties": {
+          "hash": {
+            "type": "string",
+            "nullable": true
+          },
+          "signatures": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ImportWalletFromCborHexRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "kmsRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "paymentPrivateKeyCborHex": {
+            "type": "string",
+            "nullable": true
+          },
+          "stakePrivateKeyCborHex": {
+            "type": "string",
+            "nullable": true
+          },
+          "chainCodeHex": {
+            "type": "string",
+            "nullable": true
+          },
+          "keyExportable": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ImportWalletFromKeyIdRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "kmsRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "keyId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ImportWalletFromMnemonicsRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "kmsRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "mnemonics": {
+            "type": "string",
+            "nullable": true
+          },
+          "keyExportable": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ImportWalletFromPrivateKeyRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "kmsRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "privateKeyHex": {
+            "type": "string",
+            "nullable": true
+          },
+          "chainCodeHex": {
+            "type": "string",
+            "nullable": true
+          },
+          "keyExportable": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ImportWalletFromSecretKeyRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "label": {
+            "type": "string",
+            "nullable": true
+          },
+          "kmsRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "secretKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "keyExportable": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InnerTransaction": {
+        "type": "object",
+        "properties": {
+          "hash": {
+            "type": "string",
+            "nullable": true
+          },
+          "signatures": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "maxFee": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "InternalTransaction": {
+        "type": "object",
+        "properties": {
+          "hash": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "callerAddress": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "transferToAddress": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "callValueInfo": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CallValueInfo"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "note": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "rejected": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "JsonNode": {
+        "type": "object",
+        "properties": {
+          "options": {
+            "$ref": "#/components/schemas/JsonNodeOptions"
+          },
+          "parent": {
+            "$ref": "#/components/schemas/JsonNode"
+          },
+          "root": {
+            "$ref": "#/components/schemas/JsonNode"
+          }
+        },
+        "additionalProperties": false
+      },
+      "JsonNodeOptions": {
+        "type": "object",
+        "properties": {
+          "propertyNameCaseInsensitive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "LedgerResponseLink": {
+        "type": "object",
+        "properties": {
+          "href": {
+            "type": "string",
+            "nullable": true
+          },
+          "uri": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "readOnly": true
+          },
+          "templated": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Log": {
+        "type": "object",
+        "properties": {
+          "address": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "topics": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "data": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MarketOrderDetail": {
+        "type": "object",
+        "properties": {
+          "makerOrderId": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "takerOrderId": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "fillSellQuantity": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "fillBuyQuantity": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Memo": {
+        "type": "object",
+        "additionalProperties": false
+      },
+      "OperationResponsePageLink": {
+        "type": "object",
+        "properties": {
+          "href": {
+            "type": "string",
+            "nullable": true
+          },
+          "uri": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "readOnly": true
+          },
+          "templated": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Polkadot_TransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResourceReceipt": {
+        "type": "object",
+        "properties": {
+          "energyUsage": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "energyFee": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "originEnergyUsage": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "energyUsageTotal": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "netUsage": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "netFee": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "result": {
+            "$ref": "#/components/schemas/contractResult"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ResultCodes": {
+        "type": "object",
+        "properties": {
+          "transactionResultCode": {
+            "type": "string",
+            "nullable": true
+          },
+          "operationsResultCodes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ripple_ActivateAccountRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sponsorWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ripple_TransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Solana_TransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amountInSOL": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SplToken_CreateTokenAccountAndTransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SplToken_CreateTokenAccountRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SplToken_TransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Stellar_ActiveAccountRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sponsorWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Stellar_AddTrustlineRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "walletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "issuer": {
+            "type": "string",
+            "nullable": true
+          },
+          "limit": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Stellar_FeeBumpRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "feeSourceWalletId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Stellar_TransferAssetRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "code": {
+            "type": "string",
+            "nullable": true
+          },
+          "issuer": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Stellar_TransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SubmitTransactionResponse": {
+        "type": "object",
+        "properties": {
+          "hash": {
+            "type": "string",
+            "nullable": true
+          },
+          "ledger": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "envelopeXdr": {
+            "type": "string",
+            "nullable": true
+          },
+          "resultXdr": {
+            "type": "string",
+            "nullable": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/TransactionResult"
+          },
+          "submitTransactionResponseExtras": {
+            "$ref": "#/components/schemas/Extras"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TokenDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkName": {
+            "type": "string",
+            "nullable": true
+          },
+          "blockchainName": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ton_ActionPhaseDto": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "resultCode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ton_BlockMetadataDto": {
+        "type": "object",
+        "properties": {
+          "workchain": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "shard": {
+            "type": "string",
+            "nullable": true
+          },
+          "seqno": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "transactionCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "rootHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileHash": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ton_ComputePhaseDto": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
+          },
+          "exitCode": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ton_GetBatchStatusRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionHash": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "tokenMaster": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ton_MessageDto": {
+        "type": "object",
+        "properties": {
+          "hash": {
+            "type": "string",
+            "nullable": true
+          },
+          "messageType": {
+            "type": "string",
+            "nullable": true
+          },
+          "source": {
+            "type": "string",
+            "nullable": true
+          },
+          "destination": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "tokenAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ton_SimpleTransferReceiptDto": {
+        "type": "object",
+        "properties": {
+          "transactionHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "rootHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "aborted": {
+            "type": "boolean"
+          },
+          "source": {
+            "type": "string",
+            "nullable": true
+          },
+          "destination": {
+            "type": "string",
+            "nullable": true
+          },
+          "fee": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "tokenMaster": {
+            "type": "string",
+            "nullable": true
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ton_TransactionNodeDto": {
+        "type": "object",
+        "properties": {
+          "previousTxTreeHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "transaction": {
+            "$ref": "#/components/schemas/Ton_TransactionReceiptDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ton_TransactionReceiptDto": {
+        "type": "object",
+        "properties": {
+          "aborted": {
+            "type": "boolean"
+          },
+          "destroyed": {
+            "type": "boolean"
+          },
+          "computePhase": {
+            "$ref": "#/components/schemas/Ton_ComputePhaseDto"
+          },
+          "actionPhase": {
+            "$ref": "#/components/schemas/Ton_ActionPhaseDto"
+          },
+          "account": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "rootTransactionHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionType": {
+            "type": "string",
+            "nullable": true
+          },
+          "contractAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "fee": {
+            "type": "string",
+            "nullable": true
+          },
+          "inMessage": {
+            "$ref": "#/components/schemas/Ton_MessageDto"
+          },
+          "outMessages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ton_MessageDto"
+            },
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "blockWorkchain": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "blockShard": {
+            "type": "string",
+            "nullable": true
+          },
+          "blockSeqno": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ton_TransactionTreeDto": {
+        "type": "object",
+        "properties": {
+          "transactionNodes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ton_TransactionNodeDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ton_TransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amountInTon": {
+            "type": "number",
+            "format": "double"
+          },
+          "comment": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Ton_TransferSummaryDto": {
+        "type": "object",
+        "properties": {
+          "transferReceipts": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Ton_SimpleTransferReceiptDto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransactionInfo": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "fee": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "blockNumber": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "blockTimeStamp": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "contractResult": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "format": "int32"
+              }
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "contractAddress": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "receipt": {
+            "$ref": "#/components/schemas/ResourceReceipt"
+          },
+          "log": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Log"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "result": {
+            "$ref": "#/components/schemas/code"
+          },
+          "resMessage": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "assetIssueID": {
+            "type": "string",
+            "nullable": true
+          },
+          "withdrawAmount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "unfreezeAmount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "internalTransactions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/InternalTransaction"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "exchangeReceivedAmount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "exchangeInjectAnotherAmount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "exchangeWithdrawAnotherAmount": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "exchangeId": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "shieldedTransactionFee": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "orderId": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "nullable": true
+          },
+          "orderDetails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MarketOrderDetail"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "packingFee": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransactionResponse": {
+        "type": "object",
+        "properties": {
+          "hash": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "ledger": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "createdAt": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "sourceAccount": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "accountMuxed": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "accountMuxedID": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true,
+            "readOnly": true
+          },
+          "feeAccount": {
+            "type": "string",
+            "nullable": true
+          },
+          "feeAccountMuxed": {
+            "type": "string",
+            "nullable": true
+          },
+          "feeAccountMuxedID": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "successful": {
+            "type": "boolean",
+            "default": true,
+            "readOnly": true
+          },
+          "pagingToken": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "sourceAccountSequence": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "feeCharged": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "maxFee": {
+            "type": "integer",
+            "format": "int64",
+            "readOnly": true
+          },
+          "operationCount": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "envelopeXdr": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "resultXdr": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "resultMetaXdr": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "signatures": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true,
+            "readOnly": true
+          },
+          "feeBumpTx": {
+            "$ref": "#/components/schemas/FeeBumpTransaction"
+          },
+          "innerTx": {
+            "$ref": "#/components/schemas/InnerTransaction"
+          },
+          "links": {
+            "$ref": "#/components/schemas/TransactionResponseLinks"
+          },
+          "memoType": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "memoValue": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "memoBytes": {
+            "type": "string",
+            "nullable": true,
+            "readOnly": true
+          },
+          "memo": {
+            "$ref": "#/components/schemas/Memo"
+          },
+          "result": {
+            "$ref": "#/components/schemas/TransactionResult"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransactionResponseLink": {
+        "type": "object",
+        "properties": {
+          "href": {
+            "type": "string",
+            "nullable": true
+          },
+          "uri": {
+            "type": "string",
+            "format": "uri",
+            "nullable": true,
+            "readOnly": true
+          },
+          "templated": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransactionResponseLinks": {
+        "type": "object",
+        "properties": {
+          "account": {
+            "$ref": "#/components/schemas/AccountResponseLink"
+          },
+          "effects": {
+            "$ref": "#/components/schemas/EffectResponsePageLink"
+          },
+          "ledger": {
+            "$ref": "#/components/schemas/LedgerResponseLink"
+          },
+          "operations": {
+            "$ref": "#/components/schemas/OperationResponsePageLink"
+          },
+          "precedes": {
+            "$ref": "#/components/schemas/TransactionResponseLink"
+          },
+          "self": {
+            "$ref": "#/components/schemas/TransactionResponseLink"
+          },
+          "succeeds": {
+            "$ref": "#/components/schemas/TransactionResponseLink"
+          }
+        },
+        "additionalProperties": false
+      },
+      "TransactionResult": {
+        "type": "object",
+        "properties": {
+          "feeCharged": {
+            "type": "string",
+            "nullable": true
+          },
+          "isSuccess": {
+            "type": "boolean",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Trc20_TransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "tokenRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "memo": {
+            "type": "string",
+            "nullable": true
+          },
+          "feeAmount": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Tron_TransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Utxo_InjectAddressRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "walletRef": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Utxo_SendTransactionRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionHex": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Utxo_TransactionStatusDto": {
+        "type": "object",
+        "properties": {
+          "transaction": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "transactionSize": {
+            "type": "string",
+            "nullable": true
+          },
+          "blockHash": {
+            "type": "string",
+            "nullable": true
+          },
+          "blockTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "confirmations": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Utxo_TransferRequest": {
+        "type": "object",
+        "properties": {
+          "blockchainRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "networkRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "sourceWalletId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "senderAddress": {
+            "type": "string",
+            "nullable": true
+          },
+          "destinationRef": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Utxo_UnspentDto": {
+        "type": "object",
+        "properties": {
+          "outPoint": {
+            "type": "string",
+            "nullable": true
+          },
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "confirmations": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "code": {
+        "enum": [
+          "Sucess",
+          "Failed"
+        ],
+        "type": "string"
+      },
+      "contractResult": {
+        "enum": [
+          "Default",
+          "Success",
+          "Revert",
+          "BadJumpDestination",
+          "OutOfMemory",
+          "PrecompiledContract",
+          "StackTooSmall",
+          "StackTooLarge",
+          "IllegalOperation",
+          "StackOverflow",
+          "OutOfEnergy",
+          "OutOfTime",
+          "JvmStackOverFlow",
+          "Unknown",
+          "TransferFailed"
+        ],
+        "type": "string"
+      }
+    }
+  }
+}

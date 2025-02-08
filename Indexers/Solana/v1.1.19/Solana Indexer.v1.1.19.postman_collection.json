@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "99b2c96a-b38d-4a66-a318-a45f003aebd1",
+		"name": "Solana Indexer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "6265339"
+	},
+	"item": [
+		{
+			"name": "Block Range",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{SolanaApiKey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query MyQuery\r\n{\r\n    blockRange(\r\n        sSlot: 319172804,\r\n        lSlot: 319172904,\r\n        skip: 0,\r\n        limit: 10) {\r\n\t\tblockHash,\r\n        blockHeight,\r\n        blockTime,\r\n        isSkipped,\r\n        parentSlot,\r\n        previousBlockHash,\r\n        slot,\r\n        nativeTransfers {\r\n            action,\r\n            amount,\r\n            err,\r\n            fee,\r\n            fromAddress,\r\n            programId,\r\n            signatures,\r\n            slot,\r\n            status,\r\n            toAddress,\r\n            transactionHash\r\n        },\r\n        tokenTransfers\r\n        {\r\n            action,\r\n            account,\r\n            amount,\r\n            authority,\r\n            decimal,\r\n            err,\r\n            fee,\r\n            fromAddress,\r\n            mint,\r\n            owner,\r\n            program\r\n        }\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": "{{SolanaHost}}"
+			},
+			"response": []
+		},
+		{
+			"name": "Latest Block",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{SolanaApiKey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query MyQuery\r\n{\r\n    latestBlock{\r\n        blockHash,\r\n        blockHeight,\r\n        blockTime,\r\n        isSkipped,\r\n        parentSlot,\r\n        previousBlockHash,\r\n        slot,\r\n        nativeTransfers {\r\n            action,\r\n            amount,\r\n            err,\r\n            fee,\r\n            fromAddress,\r\n            programId,\r\n            signatures,\r\n            slot,\r\n            status,\r\n            toAddress,\r\n            transactionHash\r\n        },\r\n        tokenTransfers\r\n        {\r\n            action,\r\n            account,\r\n            amount,\r\n            authority,\r\n            decimal,\r\n            err,\r\n            fee,\r\n            fromAddress,\r\n            mint,\r\n            owner,\r\n            program\r\n        }\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": "{{SolanaHost}}"
+			},
+			"response": []
+		},
+		{
+			"name": "NativeTransfers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{SolanaApiKey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query MyQuery\r\n{\r\n    nativeTransfers(\r\n        txid: \"3i8ivNSfyq22YnNdmkRL1hy7wjESN4Zp9E7GYCUy1bKcPAFh1vKAMtseaSEErcQcBBBppoxwpaBxozEyCUXoL5Gv\",\r\n        fromAddress: null,\r\n        toAddress: null,\r\n        skip: 0,\r\n        limit: 10)\r\n    {\r\n        action,\r\n        amount,\r\n        err,\r\n        fee,\r\n        fromAddress,\r\n        programId,\r\n        signatures,\r\n        slot,\r\n        status,\r\n        toAddress,\r\n        transactionHash\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": "{{SolanaHost}}"
+			},
+			"response": []
+		},
+		{
+			"name": "TokenTransfers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{SolanaApiKey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query MyQuery\r\n{\r\n    tokenTransfers(\r\n         txid: \"3i8ivNSfyq22YnNdmkRL1hy7wjESN4Zp9E7GYCUy1bKcPAFh1vKAMtseaSEErcQcBBBppoxwpaBxozEyCUXoL5Gv\",\r\n        fromAddress: null,\r\n        toAddress: null,\r\n        accountAddress: null,\r\n        skip: 0,\r\n        limit: 10)\r\n    {\r\n        account,\r\n        action,\r\n        amount,\r\n        authority,\r\n        decimal,\r\n        err,\r\n        fee,\r\n        fromAddress,\r\n        mint,\r\n        owner,\r\n        program,\r\n        programId,\r\n        rentSysvar,\r\n        signatures,\r\n        slot,\r\n        status,\r\n        toAddress,\r\n        transactionHash\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": "{{SolanaHost}}"
+			},
+			"response": []
+		}
+	]
+}
