@@ -1,0 +1,4816 @@
+{
+	"info": {
+		"_postman_id": "d5482832-a264-4659-ac2f-968245d8c82d",
+		"name": "Polareum.Kms.Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6265339"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "bip32key",
+					"item": [
+						{
+							"name": "generate",
+							"item": [
+								{
+									"name": "Generates new key inside the KMS",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/bip32key/generate",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"bip32key",
+												"generate"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/bip32key/generate",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"bip32key",
+														"generate"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-mnemonics",
+							"item": [
+								{
+									"name": "Imports a key based on mnemonics given",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/bip32key/import-mnemonics",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"bip32key",
+												"import-mnemonics"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/bip32key/import-mnemonics",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"bip32key",
+														"import-mnemonics"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-privatekey",
+							"item": [
+								{
+									"name": "imports a key based on private key",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"privateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/bip32key/import-privatekey",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"bip32key",
+												"import-privatekey"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"privateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/bip32key/import-privatekey",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"bip32key",
+														"import-privatekey"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "derive",
+							"item": [
+								{
+									"name": "derive new key from parent key using HD based on BEP0032",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"parentId\": \"<uuid>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/bip32key/derive",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"bip32key",
+												"derive"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"parentId\": \"<uuid>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/bip32key/derive",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"bip32key",
+														"derive"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "cardano",
+					"item": [
+						{
+							"name": "sign",
+							"item": [
+								{
+									"name": "Signs transaction hash",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"keyId\": \"<uuid>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/cardano/sign",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"cardano",
+												"sign"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"keyId\": \"<uuid>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/cardano/sign",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"cardano",
+														"sign"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"signedMessage\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "get-public-info",
+							"item": [
+								{
+									"name": "Returns public information (public key and address based on Cardano network)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/cardano/get-public-info?KeyId=<uuid>&RpcUrl=<string>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"cardano",
+												"get-public-info"
+											],
+											"query": [
+												{
+													"key": "KeyId",
+													"value": "<uuid>",
+													"description": "the key id"
+												},
+												{
+													"key": "RpcUrl",
+													"value": "<string>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/cardano/get-public-info?KeyId=<uuid>&RpcUrl=<string>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"cardano",
+														"get-public-info"
+													],
+													"query": [
+														{
+															"key": "KeyId",
+															"value": "<uuid>",
+															"description": "the key id"
+														},
+														{
+															"key": "RpcUrl",
+															"value": "<string>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\",\n  \"publicKeyHex\": \"<string>\",\n  \"publicAddress\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "cardanokey",
+					"item": [
+						{
+							"name": "import-mnemonics",
+							"item": [
+								{
+									"name": "Imports a key based on mnemonics given",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/cardanokey/import-mnemonics",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"cardanokey",
+												"import-mnemonics"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/cardanokey/import-mnemonics",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"cardanokey",
+														"import-mnemonics"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-cborhex",
+							"item": [
+								{
+									"name": "imports a key based on private key",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"paymentPrivateKeyHex\": \"<string>\",\n  \"stakePrivateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"isTestnet\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/cardanokey/import-cborhex",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"cardanokey",
+												"import-cborhex"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"paymentPrivateKeyHex\": \"<string>\",\n  \"stakePrivateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"isTestnet\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/cardanokey/import-cborhex",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"cardanokey",
+														"import-cborhex"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "generate",
+							"item": [
+								{
+									"name": "Generates new key inside the KMS",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/cardanokey/generate",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"cardanokey",
+												"generate"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/cardanokey/generate",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"cardanokey",
+														"generate"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "evm",
+					"item": [
+						{
+							"name": "sign",
+							"item": [
+								{
+									"name": "hash",
+									"item": [
+										{
+											"name": "Signs transaction hash",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"keyId\": \"<uuid>\",\n  \"hashHex\": \"<string>\",\n  \"chainId\": \"<integer>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/evm/sign/hash",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"evm",
+														"sign",
+														"hash"
+													]
+												}
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "X-API-Key",
+																"value": "<string>"
+															},
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"keyId\": \"<uuid>\",\n  \"hashHex\": \"<string>\",\n  \"chainId\": \"<integer>\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/evm/sign/hash",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"evm",
+																"sign",
+																"hash"
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"r_Hex\": \"<string>\",\n  \"s_Hex\": \"<string>\",\n  \"v_Hex\": \"<string>\",\n  \"signature\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "get-public-info",
+							"item": [
+								{
+									"name": "Returns public information (public key and address based on evm networks)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/evm/get-public-info?KeyId=<uuid>&Compressed=<boolean>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"evm",
+												"get-public-info"
+											],
+											"query": [
+												{
+													"key": "KeyId",
+													"value": "<uuid>",
+													"description": "the key id"
+												},
+												{
+													"key": "Compressed",
+													"value": "<boolean>",
+													"description": "if the public key should be created as compressed"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/evm/get-public-info?KeyId=<uuid>&Compressed=<boolean>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"evm",
+														"get-public-info"
+													],
+													"query": [
+														{
+															"key": "KeyId",
+															"value": "<uuid>",
+															"description": "the key id"
+														},
+														{
+															"key": "Compressed",
+															"value": "<boolean>",
+															"description": "if the public key should be created as compressed"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\",\n  \"publicKeyHex\": \"<string>\",\n  \"publicAddress\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "key",
+					"item": [
+						{
+							"name": "export-key",
+							"item": [
+								{
+									"name": "exports a key (if it is exportable)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/key/export-key?keyId=<uuid>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"key",
+												"export-key"
+											],
+											"query": [
+												{
+													"key": "keyId",
+													"value": "<uuid>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/key/export-key?keyId=<uuid>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"key",
+														"export-key"
+													],
+													"query": [
+														{
+															"key": "keyId",
+															"value": "<uuid>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"privatekeyHex\": \"<string>\",\n  \"timestamp\": \"<dateTime>\",\n  \"chainCodeHex\": \"<string>\",\n  \"secretKey\": \"<string>\",\n  \"label\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "delete",
+							"item": [
+								{
+									"name": "Deletes a key from KMS'es key store",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/key/delete?keyId=<uuid>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"key",
+												"delete"
+											],
+											"query": [
+												{
+													"key": "keyId",
+													"value": "<uuid>"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/key/delete?keyId=<uuid>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"key",
+														"delete"
+													],
+													"query": [
+														{
+															"key": "keyId",
+															"value": "<uuid>"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "polkadot",
+					"item": [
+						{
+							"name": "sign",
+							"item": [
+								{
+									"name": "Signs transaction hash",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"keyId\": \"<uuid>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/polkadot/sign",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"polkadot",
+												"sign"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"keyId\": \"<uuid>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/polkadot/sign",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"polkadot",
+														"sign"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"signedMessage\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "get-public-info",
+							"item": [
+								{
+									"name": "Returns public information (public key and address based on Polkadot network)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/polkadot/get-public-info?KeyId=<uuid>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"polkadot",
+												"get-public-info"
+											],
+											"query": [
+												{
+													"key": "KeyId",
+													"value": "<uuid>",
+													"description": "the key id"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/polkadot/get-public-info?KeyId=<uuid>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"polkadot",
+														"get-public-info"
+													],
+													"query": [
+														{
+															"key": "KeyId",
+															"value": "<uuid>",
+															"description": "the key id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\",\n  \"publicKeyHex\": \"<string>\",\n  \"publicAddress\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "polkadotkey",
+					"item": [
+						{
+							"name": "generate",
+							"item": [
+								{
+									"name": "Generates new key inside the KMS",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/polkadotkey/generate",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"polkadotkey",
+												"generate"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/polkadotkey/generate",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"polkadotkey",
+														"generate"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-mnemonics",
+							"item": [
+								{
+									"name": "Imports a key based on mnemonics given",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/polkadotkey/import-mnemonics",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"polkadotkey",
+												"import-mnemonics"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/polkadotkey/import-mnemonics",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"polkadotkey",
+														"import-mnemonics"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-privatekey",
+							"item": [
+								{
+									"name": "imports a key based on private key",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"privateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/polkadotkey/import-privatekey",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"polkadotkey",
+												"import-privatekey"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"privateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/polkadotkey/import-privatekey",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"polkadotkey",
+														"import-privatekey"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "ripple",
+					"item": [
+						{
+							"name": "sign",
+							"item": [
+								{
+									"name": "Signs transaction hash",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"keyId\": \"<uuid>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/ripple/sign",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"ripple",
+												"sign"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"keyId\": \"<uuid>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/ripple/sign",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ripple",
+														"sign"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"signedMessage\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "get-public-info",
+							"item": [
+								{
+									"name": "Returns public information (public key and address based on Polkadot network)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/ripple/get-public-info?KeyId=<uuid>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"ripple",
+												"get-public-info"
+											],
+											"query": [
+												{
+													"key": "KeyId",
+													"value": "<uuid>",
+													"description": "the key id"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/ripple/get-public-info?KeyId=<uuid>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ripple",
+														"get-public-info"
+													],
+													"query": [
+														{
+															"key": "KeyId",
+															"value": "<uuid>",
+															"description": "the key id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\",\n  \"publicKeyHex\": \"<string>\",\n  \"publicAddress\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "ripplekey",
+					"item": [
+						{
+							"name": "import-mnemonics",
+							"item": [
+								{
+									"name": "Imports a key based on mnemonics given",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/ripplekey/import-mnemonics",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"ripplekey",
+												"import-mnemonics"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/ripplekey/import-mnemonics",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ripplekey",
+														"import-mnemonics"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-privatekey",
+							"item": [
+								{
+									"name": "imports a key based on private key",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"privateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/ripplekey/import-privatekey",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"ripplekey",
+												"import-privatekey"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"privateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/ripplekey/import-privatekey",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ripplekey",
+														"import-privatekey"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "generate",
+							"item": [
+								{
+									"name": "Generates new key inside the KMS",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/ripplekey/generate",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"ripplekey",
+												"generate"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/ripplekey/generate",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ripplekey",
+														"generate"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "solana",
+					"item": [
+						{
+							"name": "sign",
+							"item": [
+								{
+									"name": "Signs transaction hash",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"keyId\": \"<uuid>\",\n  \"txMessage\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/solana/sign",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"solana",
+												"sign"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"keyId\": \"<uuid>\",\n  \"txMessage\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/solana/sign",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"solana",
+														"sign"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"signedMessage\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "get-public-info",
+							"item": [
+								{
+									"name": "Returns public information (public key and address based on Solana network)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/solana/get-public-info?KeyId=<uuid>&Compressed=<boolean>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"solana",
+												"get-public-info"
+											],
+											"query": [
+												{
+													"key": "KeyId",
+													"value": "<uuid>",
+													"description": "the key id"
+												},
+												{
+													"key": "Compressed",
+													"value": "<boolean>",
+													"description": "if the public key should be created as compressed"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/solana/get-public-info?KeyId=<uuid>&Compressed=<boolean>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"solana",
+														"get-public-info"
+													],
+													"query": [
+														{
+															"key": "KeyId",
+															"value": "<uuid>",
+															"description": "the key id"
+														},
+														{
+															"key": "Compressed",
+															"value": "<boolean>",
+															"description": "if the public key should be created as compressed"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\",\n  \"publicKeyHex\": \"<string>\",\n  \"publicAddress\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "solanakey",
+					"item": [
+						{
+							"name": "generate",
+							"item": [
+								{
+									"name": "Generates new key inside the KMS",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/solanakey/generate",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"solanakey",
+												"generate"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/solanakey/generate",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"solanakey",
+														"generate"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-mnemonics",
+							"item": [
+								{
+									"name": "Imports a key based on mnemonics given",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/solanakey/import-mnemonics",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"solanakey",
+												"import-mnemonics"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/solanakey/import-mnemonics",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"solanakey",
+														"import-mnemonics"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-secretkey",
+							"item": [
+								{
+									"name": "imports a key based on private key",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"secretKey\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/solanakey/import-secretkey",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"solanakey",
+												"import-secretkey"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"secretKey\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/solanakey/import-secretkey",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"solanakey",
+														"import-secretkey"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "stellar",
+					"item": [
+						{
+							"name": "sign",
+							"item": [
+								{
+									"name": "Signs transaction hash",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"keyId\": \"<uuid>\",\n  \"transactionHex\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/stellar/sign",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"stellar",
+												"sign"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"keyId\": \"<uuid>\",\n  \"transactionHex\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/stellar/sign",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"stellar",
+														"sign"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"hint\": {\n    \"innerValue\": \"<string>\"\n  },\n  \"signature\": {\n    \"innerValue\": \"<string>\"\n  }\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "get-public-info",
+							"item": [
+								{
+									"name": "Returns public information (public key and address based on stellar networks)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/stellar/get-public-info?KeyId=<uuid>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"stellar",
+												"get-public-info"
+											],
+											"query": [
+												{
+													"key": "KeyId",
+													"value": "<uuid>",
+													"description": "the key id"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/stellar/get-public-info?KeyId=<uuid>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"stellar",
+														"get-public-info"
+													],
+													"query": [
+														{
+															"key": "KeyId",
+															"value": "<uuid>",
+															"description": "the key id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\",\n  \"publicKeyHex\": \"<string>\",\n  \"publicAddress\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "stellarkey",
+					"item": [
+						{
+							"name": "generate",
+							"item": [
+								{
+									"name": "Generates new key inside the KMS",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/stellarkey/generate",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"stellarkey",
+												"generate"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/stellarkey/generate",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"stellarkey",
+														"generate"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-mnemonics",
+							"item": [
+								{
+									"name": "Imports a key based on mnemonics given",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/stellarkey/import-mnemonics",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"stellarkey",
+												"import-mnemonics"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/stellarkey/import-mnemonics",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"stellarkey",
+														"import-mnemonics"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-secret-key",
+							"item": [
+								{
+									"name": "imports a key based on secret key",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"secretKey\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/stellarkey/import-secret-key",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"stellarkey",
+												"import-secret-key"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"secretKey\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/stellarkey/import-secret-key",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"stellarkey",
+														"import-secret-key"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "ton",
+					"item": [
+						{
+							"name": "sign",
+							"item": [
+								{
+									"name": "Signs transaction hash",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"keyId\": \"<uuid>\",\n  \"messageCell\": \"<string>\",\n  \"messageState\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"source\": \"<string>\",\n  \"importFee\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/ton/sign",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"ton",
+												"sign"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"keyId\": \"<uuid>\",\n  \"messageCell\": \"<string>\",\n  \"messageState\": \"<string>\",\n  \"destination\": \"<string>\",\n  \"source\": \"<string>\",\n  \"importFee\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/ton/sign",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ton",
+														"sign"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"signedCell\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "get-public-info",
+							"item": [
+								{
+									"name": "Returns public information (public key and address based on Ton network)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/ton/get-public-info?KeyId=<uuid>&Compressed=<boolean>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"ton",
+												"get-public-info"
+											],
+											"query": [
+												{
+													"key": "KeyId",
+													"value": "<uuid>",
+													"description": "the key id"
+												},
+												{
+													"key": "Compressed",
+													"value": "<boolean>",
+													"description": "if the public key should be created as compressed"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/ton/get-public-info?KeyId=<uuid>&Compressed=<boolean>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"ton",
+														"get-public-info"
+													],
+													"query": [
+														{
+															"key": "KeyId",
+															"value": "<uuid>",
+															"description": "the key id"
+														},
+														{
+															"key": "Compressed",
+															"value": "<boolean>",
+															"description": "if the public key should be created as compressed"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\",\n  \"publicKeyHex\": \"<string>\",\n  \"publicAddress\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "tonkey",
+					"item": [
+						{
+							"name": "generate",
+							"item": [
+								{
+									"name": "Generates new key inside the KMS",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/tonkey/generate",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"tonkey",
+												"generate"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/tonkey/generate",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"tonkey",
+														"generate"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-mnemonics",
+							"item": [
+								{
+									"name": "Imports a key based on mnemonics given",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/tonkey/import-mnemonics",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"tonkey",
+												"import-mnemonics"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/tonkey/import-mnemonics",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"tonkey",
+														"import-mnemonics"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-privatekey",
+							"item": [
+								{
+									"name": "imports a key based on private key",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"privateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/tonkey/import-privatekey",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"tonkey",
+												"import-privatekey"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"privateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/tonkey/import-privatekey",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"tonkey",
+														"import-privatekey"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "tron",
+					"item": [
+						{
+							"name": "sign",
+							"item": [
+								{
+									"name": "Signs transaction hash",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"keyId\": \"<uuid>\",\n  \"transactionHex\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/tron/sign",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"tron",
+												"sign"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"keyId\": \"<uuid>\",\n  \"transactionHex\": \"<string>\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/tron/sign",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"tron",
+														"sign"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"signedMessage\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "get-public-info",
+							"item": [
+								{
+									"name": "Returns public information (public key and address based on tron networks)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/tron/get-public-info?KeyId=<uuid>",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"tron",
+												"get-public-info"
+											],
+											"query": [
+												{
+													"key": "KeyId",
+													"value": "<uuid>",
+													"description": "the key id"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/tron/get-public-info?KeyId=<uuid>",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"tron",
+														"get-public-info"
+													],
+													"query": [
+														{
+															"key": "KeyId",
+															"value": "<uuid>",
+															"description": "the key id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\",\n  \"publicKeyHex\": \"<string>\",\n  \"publicAddress\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "tronkey",
+					"item": [
+						{
+							"name": "generate",
+							"item": [
+								{
+									"name": "Generates new key inside the KMS",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/tronkey/generate",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"tronkey",
+												"generate"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/tronkey/generate",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"tronkey",
+														"generate"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-mnemonics",
+							"item": [
+								{
+									"name": "Imports a key based on mnemonics given",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/tronkey/import-mnemonics",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"tronkey",
+												"import-mnemonics"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/tronkey/import-mnemonics",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"tronkey",
+														"import-mnemonics"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-privatekey",
+							"item": [
+								{
+									"name": "imports a key based on private key",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"privateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/tronkey/import-privatekey",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"tronkey",
+												"import-privatekey"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"privateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/tronkey/import-privatekey",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"tronkey",
+														"import-privatekey"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "utxo",
+					"item": [
+						{
+							"name": "get-public-info",
+							"item": [
+								{
+									"name": "Returns public information (public key and address based on Utxo networks)",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/utxo/get-public-info?KeyId=<uuid>&Compressed=<boolean>&UtxoNetworkName=Bitcoin&UtxoChainType=RegTest",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"utxo",
+												"get-public-info"
+											],
+											"query": [
+												{
+													"key": "KeyId",
+													"value": "<uuid>",
+													"description": "the key id"
+												},
+												{
+													"key": "Compressed",
+													"value": "<boolean>",
+													"description": "if the public key should be created as compressed"
+												},
+												{
+													"key": "UtxoNetworkName",
+													"value": "Bitcoin"
+												},
+												{
+													"key": "UtxoChainType",
+													"value": "RegTest"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/utxo/get-public-info?KeyId=<uuid>&Compressed=<boolean>&UtxoNetworkName=Bitcoin&UtxoChainType=RegTest",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"utxo",
+														"get-public-info"
+													],
+													"query": [
+														{
+															"key": "KeyId",
+															"value": "<uuid>",
+															"description": "the key id"
+														},
+														{
+															"key": "Compressed",
+															"value": "<boolean>",
+															"description": "if the public key should be created as compressed"
+														},
+														{
+															"key": "UtxoNetworkName",
+															"value": "Bitcoin"
+														},
+														{
+															"key": "UtxoChainType",
+															"value": "RegTest"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\",\n  \"publicKeyHex\": \"<string>\",\n  \"publicAddress\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "sign",
+							"item": [
+								{
+									"name": "Signs transaction hash",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"keyId\": \"<uuid>\",\n  \"txPsbt\": \"<string>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/utxo/sign",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"utxo",
+												"sign"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"keyId\": \"<uuid>\",\n  \"txPsbt\": \"<string>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/utxo/sign",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"utxo",
+														"sign"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"signedPsbt\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "utxokey",
+					"item": [
+						{
+							"name": "generate",
+							"item": [
+								{
+									"name": "Generates new key inside the KMS",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/utxokey/generate",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"utxokey",
+												"generate"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/utxokey/generate",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"utxokey",
+														"generate"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-mnemonics",
+							"item": [
+								{
+									"name": "Imports a key based on mnemonics given",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/utxokey/import-mnemonics",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"utxokey",
+												"import-mnemonics"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"mnemonics\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Litecoin\",\n  \"utxoChainType\": \"RegTest\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/utxokey/import-mnemonics",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"utxokey",
+														"import-mnemonics"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "import-privatekey",
+							"item": [
+								{
+									"name": "imports a key based on private key",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-Key",
+												"value": "<string>"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"privateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/utxokey/import-privatekey",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"utxokey",
+												"import-privatekey"
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-Key",
+														"value": "<string>"
+													},
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"privateKeyHex\": \"<string>\",\n  \"chainCodeHex\": \"<string>\",\n  \"label\": \"<string>\",\n  \"exportable\": \"<boolean>\",\n  \"utxoNetworkName\": \"Bitcoin\",\n  \"utxoChainType\": \"MainNet\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/utxokey/import-privatekey",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"utxokey",
+														"import-privatekey"
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"keyId\": \"<uuid>\"\n}"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}

@@ -1,0 +1,3041 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Polareum.Kms.Server",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/bip32key/generate": {
+      "post": {
+        "tags": [
+          "BIP32Key"
+        ],
+        "summary": "Generates new key inside the KMS",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/bip32key/import-mnemonics": {
+      "post": {
+        "tags": [
+          "BIP32Key"
+        ],
+        "summary": "Imports a key based on mnemonics given",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/bip32key/import-privatekey": {
+      "post": {
+        "tags": [
+          "BIP32Key"
+        ],
+        "summary": "imports a key based on private key",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/bip32key/derive": {
+      "post": {
+        "tags": [
+          "BIP32Key"
+        ],
+        "summary": "derive new key from parent key using HD based on BEP0032",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeriveKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeriveKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DeriveKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cardano/sign": {
+      "post": {
+        "tags": [
+          "Cardano"
+        ],
+        "summary": "Signs transaction hash",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CardanoSignRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CardanoSignRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CardanoSignRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CardanoSignResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cardano/get-public-info": {
+      "get": {
+        "tags": [
+          "Cardano"
+        ],
+        "summary": "Returns public information (public key and address based on Cardano network)",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "KeyId",
+            "in": "query",
+            "description": "the key id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "RpcUrl",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetCardanoPublicInfoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cardanokey/import-mnemonics": {
+      "post": {
+        "tags": [
+          "CardanoKey"
+        ],
+        "summary": "Imports a key based on mnemonics given",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cardanokey/import-cborhex": {
+      "post": {
+        "tags": [
+          "CardanoKey"
+        ],
+        "summary": "imports a key based on private key",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportCborHexRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportCborHexRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportCborHexRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/cardanokey/generate": {
+      "post": {
+        "tags": [
+          "CardanoKey"
+        ],
+        "summary": "Generates new key inside the KMS",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/evm/sign/hash": {
+      "post": {
+        "tags": [
+          "Evm"
+        ],
+        "summary": "Signs transaction hash",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EvmSignHashRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EvmSignHashRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EvmSignHashRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EvmSignHashResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/evm/get-public-info": {
+      "get": {
+        "tags": [
+          "Evm"
+        ],
+        "summary": "Returns public information (public key and address based on evm networks)",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "KeyId",
+            "in": "query",
+            "description": "the key id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Compressed",
+            "in": "query",
+            "description": "if the public key should be created as compressed",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetEvmPublicInfoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/key/export-key": {
+      "get": {
+        "tags": [
+          "Key"
+        ],
+        "summary": "exports a key (if it is exportable)",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "keyId",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExportedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/key/delete": {
+      "post": {
+        "tags": [
+          "Key"
+        ],
+        "summary": "Deletes a key from KMS'es key store",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "keyId",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/polkadot/sign": {
+      "post": {
+        "tags": [
+          "Polkadot"
+        ],
+        "summary": "Signs transaction hash",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolkadotSignRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolkadotSignRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PolkadotSignRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PolkadotSignResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/polkadot/get-public-info": {
+      "get": {
+        "tags": [
+          "Polkadot"
+        ],
+        "summary": "Returns public information (public key and address based on Polkadot network)",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "KeyId",
+            "in": "query",
+            "description": "the key id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPolkadotPublicInfoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/polkadotkey/generate": {
+      "post": {
+        "tags": [
+          "PolkadotKey"
+        ],
+        "summary": "Generates new key inside the KMS",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/polkadotkey/import-mnemonics": {
+      "post": {
+        "tags": [
+          "PolkadotKey"
+        ],
+        "summary": "Imports a key based on mnemonics given",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/polkadotkey/import-privatekey": {
+      "post": {
+        "tags": [
+          "PolkadotKey"
+        ],
+        "summary": "imports a key based on private key",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ripple/sign": {
+      "post": {
+        "tags": [
+          "Ripple"
+        ],
+        "summary": "Signs transaction hash",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RippleSignRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RippleSignRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RippleSignRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RippleSignResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ripple/get-public-info": {
+      "get": {
+        "tags": [
+          "Ripple"
+        ],
+        "summary": "Returns public information (public key and address based on Polkadot network)",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "KeyId",
+            "in": "query",
+            "description": "the key id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetRipplePublicInfoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ripplekey/import-mnemonics": {
+      "post": {
+        "tags": [
+          "RippleKey"
+        ],
+        "summary": "Imports a key based on mnemonics given",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ripplekey/import-privatekey": {
+      "post": {
+        "tags": [
+          "RippleKey"
+        ],
+        "summary": "imports a key based on private key",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ripplekey/generate": {
+      "post": {
+        "tags": [
+          "RippleKey"
+        ],
+        "summary": "Generates new key inside the KMS",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/solana/sign": {
+      "post": {
+        "tags": [
+          "Solana"
+        ],
+        "summary": "Signs transaction hash",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SolanaSignRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SolanaSignRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SolanaSignRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SolanaSignResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/solana/get-public-info": {
+      "get": {
+        "tags": [
+          "Solana"
+        ],
+        "summary": "Returns public information (public key and address based on Solana network)",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "KeyId",
+            "in": "query",
+            "description": "the key id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Compressed",
+            "in": "query",
+            "description": "if the public key should be created as compressed",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSolanaPublicInfoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/solanakey/generate": {
+      "post": {
+        "tags": [
+          "SolanaKey"
+        ],
+        "summary": "Generates new key inside the KMS",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/solanakey/import-mnemonics": {
+      "post": {
+        "tags": [
+          "SolanaKey"
+        ],
+        "summary": "Imports a key based on mnemonics given",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/solanakey/import-secretkey": {
+      "post": {
+        "tags": [
+          "SolanaKey"
+        ],
+        "summary": "imports a key based on private key",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportSecretKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportSecretKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportSecretKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellar/sign": {
+      "post": {
+        "tags": [
+          "Stellar"
+        ],
+        "summary": "Signs transaction hash",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StellarSignRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StellarSignRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/StellarSignRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecoratedSignature"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellar/get-public-info": {
+      "get": {
+        "tags": [
+          "Stellar"
+        ],
+        "summary": "Returns public information (public key and address based on stellar networks)",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "KeyId",
+            "in": "query",
+            "description": "the key id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetStellarPublicInfoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellarkey/generate": {
+      "post": {
+        "tags": [
+          "StellarKey"
+        ],
+        "summary": "Generates new key inside the KMS",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellarkey/import-mnemonics": {
+      "post": {
+        "tags": [
+          "StellarKey"
+        ],
+        "summary": "Imports a key based on mnemonics given",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/stellarkey/import-secret-key": {
+      "post": {
+        "tags": [
+          "StellarKey"
+        ],
+        "summary": "imports a key based on secret key",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportSecretKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportSecretKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportSecretKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/sign": {
+      "post": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Signs transaction hash",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TonSignRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TonSignRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TonSignRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TonSignResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/ton/get-public-info": {
+      "get": {
+        "tags": [
+          "Ton"
+        ],
+        "summary": "Returns public information (public key and address based on Ton network)",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "KeyId",
+            "in": "query",
+            "description": "the key id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Compressed",
+            "in": "query",
+            "description": "if the public key should be created as compressed",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTonPublicInfoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tonkey/generate": {
+      "post": {
+        "tags": [
+          "TonKey"
+        ],
+        "summary": "Generates new key inside the KMS",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tonkey/import-mnemonics": {
+      "post": {
+        "tags": [
+          "TonKey"
+        ],
+        "summary": "Imports a key based on mnemonics given",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tonkey/import-privatekey": {
+      "post": {
+        "tags": [
+          "TonKey"
+        ],
+        "summary": "imports a key based on private key",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tron/sign": {
+      "post": {
+        "tags": [
+          "Tron"
+        ],
+        "summary": "Signs transaction hash",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TronSignRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TronSignRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TronSignRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TronSignResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tron/get-public-info": {
+      "get": {
+        "tags": [
+          "Tron"
+        ],
+        "summary": "Returns public information (public key and address based on tron networks)",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "KeyId",
+            "in": "query",
+            "description": "the key id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetTronPublicInfoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tronkey/generate": {
+      "post": {
+        "tags": [
+          "TronKey"
+        ],
+        "summary": "Generates new key inside the KMS",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tronkey/import-mnemonics": {
+      "post": {
+        "tags": [
+          "TronKey"
+        ],
+        "summary": "Imports a key based on mnemonics given",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/tronkey/import-privatekey": {
+      "post": {
+        "tags": [
+          "TronKey"
+        ],
+        "summary": "imports a key based on private key",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/utxo/get-public-info": {
+      "get": {
+        "tags": [
+          "Utxo"
+        ],
+        "summary": "Returns public information (public key and address based on Utxo networks)",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "KeyId",
+            "in": "query",
+            "description": "the key id",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "Compressed",
+            "in": "query",
+            "description": "if the public key should be created as compressed",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "UtxoNetworkName",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/UtxoChainName"
+            }
+          },
+          {
+            "name": "UtxoChainType",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "$ref": "#/components/schemas/UtxoChainType"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUtxoPublicInfoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/utxo/sign": {
+      "post": {
+        "tags": [
+          "Utxo"
+        ],
+        "summary": "Signs transaction hash",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UtxoSignRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UtxoSignRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UtxoSignRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UtxoSignResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/utxokey/generate": {
+      "post": {
+        "tags": [
+          "UtxoKey"
+        ],
+        "summary": "Generates new key inside the KMS",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateNewKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/utxokey/import-mnemonics": {
+      "post": {
+        "tags": [
+          "UtxoKey"
+        ],
+        "summary": "Imports a key based on mnemonics given",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportMnemonicsRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/utxokey/import-privatekey": {
+      "post": {
+        "tags": [
+          "UtxoKey"
+        ],
+        "summary": "imports a key based on private key",
+        "parameters": [
+          {
+            "name": "X-API-Key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ImportPrivateKeyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeneratedKeyResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CardanoSignRequest": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "Key Id for signing",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Polkadot Sign Request"
+      },
+      "CardanoSignResponse": {
+        "type": "object",
+        "properties": {
+          "signedMessage": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Signed Transaction"
+      },
+      "DecoratedSignature": {
+        "type": "object",
+        "properties": {
+          "hint": {
+            "$ref": "#/components/schemas/SignatureHint"
+          },
+          "signature": {
+            "$ref": "#/components/schemas/Signature"
+          }
+        },
+        "additionalProperties": false
+      },
+      "DeriveKeyRequest": {
+        "type": "object",
+        "properties": {
+          "parentId": {
+            "type": "string",
+            "description": "Parent Key Id to be used",
+            "format": "uuid"
+          },
+          "label": {
+            "type": "string",
+            "description": "the new key label, can be used for tracing",
+            "nullable": true
+          },
+          "exportable": {
+            "type": "boolean",
+            "description": "whether the key is exportable or not",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Derive Key Request"
+      },
+      "EvmSignHashRequest": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "Key Id for signing",
+            "format": "uuid"
+          },
+          "hashHex": {
+            "type": "string",
+            "description": "hash in hex format",
+            "nullable": true
+          },
+          "chainId": {
+            "type": "integer",
+            "description": "Ethereum Chain Id to sign the transaction with",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Evm Sign Request"
+      },
+      "EvmSignHashResponse": {
+        "type": "object",
+        "properties": {
+          "r_Hex": {
+            "type": "string",
+            "description": "R part",
+            "nullable": true
+          },
+          "s_Hex": {
+            "type": "string",
+            "description": "S part",
+            "nullable": true
+          },
+          "v_Hex": {
+            "type": "string",
+            "description": "V part",
+            "nullable": true
+          },
+          "signature": {
+            "type": "string",
+            "description": "total signature with 0x in the first part",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Signature withs its components"
+      },
+      "ExportedKeyResponse": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "key type",
+            "nullable": true
+          },
+          "privatekeyHex": {
+            "type": "string",
+            "description": "the private key",
+            "nullable": true
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "the timestamp for the key when it is generated",
+            "format": "date-time"
+          },
+          "chainCodeHex": {
+            "type": "string",
+            "description": "chain code data hex",
+            "nullable": true
+          },
+          "secretKey": {
+            "type": "string",
+            "description": "secret key used in stellar network",
+            "nullable": true
+          },
+          "label": {
+            "type": "string",
+            "description": "the new key label, can be used for tracing",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Export Key Response"
+      },
+      "GenerateNewKeyRequest": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "the new key label, can be used for tracing",
+            "nullable": true
+          },
+          "exportable": {
+            "type": "boolean",
+            "description": "",
+            "nullable": true
+          },
+          "utxoNetworkName": {
+            "$ref": "#/components/schemas/UtxoChainName"
+          },
+          "utxoChainType": {
+            "$ref": "#/components/schemas/UtxoChainType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Generate New Key Request"
+      },
+      "GeneratedKeyResponse": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "the new key Id",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Generated Key Info"
+      },
+      "GetCardanoPublicInfoResponse": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "",
+            "format": "uuid"
+          },
+          "publicKeyHex": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "publicAddress": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get Solana Public Info Response"
+      },
+      "GetEvmPublicInfoResponse": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "",
+            "format": "uuid"
+          },
+          "publicKeyHex": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "publicAddress": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get Evm Public Info Response"
+      },
+      "GetPolkadotPublicInfoResponse": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "",
+            "format": "uuid"
+          },
+          "publicKeyHex": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "publicAddress": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get Solana Public Info Response"
+      },
+      "GetRipplePublicInfoResponse": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "",
+            "format": "uuid"
+          },
+          "publicKeyHex": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "publicAddress": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get Solana Public Info Response"
+      },
+      "GetSolanaPublicInfoResponse": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "",
+            "format": "uuid"
+          },
+          "publicKeyHex": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "publicAddress": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get Solana Public Info Response"
+      },
+      "GetStellarPublicInfoResponse": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "",
+            "format": "uuid"
+          },
+          "publicKeyHex": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "publicAddress": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get Tron Public Info Response"
+      },
+      "GetTonPublicInfoResponse": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "",
+            "format": "uuid"
+          },
+          "publicKeyHex": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "publicAddress": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get Ton Public Info Response"
+      },
+      "GetTronPublicInfoResponse": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "",
+            "format": "uuid"
+          },
+          "publicKeyHex": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "publicAddress": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get Tron Public Info Response"
+      },
+      "GetUtxoPublicInfoResponse": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "",
+            "format": "uuid"
+          },
+          "publicKeyHex": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          },
+          "publicAddress": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Get Utxo Public Info Response"
+      },
+      "ImportCborHexRequest": {
+        "type": "object",
+        "properties": {
+          "paymentPrivateKeyHex": {
+            "type": "string",
+            "description": "cbor hex of payment private key in hex format",
+            "nullable": true
+          },
+          "stakePrivateKeyHex": {
+            "type": "string",
+            "description": "cbor hex stake private key in hex format",
+            "nullable": true
+          },
+          "chainCodeHex": {
+            "type": "string",
+            "description": "chain code data hex",
+            "nullable": true
+          },
+          "label": {
+            "type": "string",
+            "description": "the new key label, can be used for tracing",
+            "nullable": true
+          },
+          "exportable": {
+            "type": "boolean",
+            "description": "whether the key is exportable or not",
+            "nullable": true
+          },
+          "isTestnet": {
+            "type": "boolean",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Import Key from Cborhex Key"
+      },
+      "ImportMnemonicsRequest": {
+        "type": "object",
+        "properties": {
+          "mnemonics": {
+            "type": "string",
+            "description": "the mnemonics from which the key should be built",
+            "nullable": true
+          },
+          "label": {
+            "type": "string",
+            "description": "the new key label, can be used for tracing",
+            "nullable": true
+          },
+          "exportable": {
+            "type": "boolean",
+            "description": "whether the key is exportable or not",
+            "nullable": true
+          },
+          "utxoNetworkName": {
+            "$ref": "#/components/schemas/UtxoChainName"
+          },
+          "utxoChainType": {
+            "$ref": "#/components/schemas/UtxoChainType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Import Mnemonics Request"
+      },
+      "ImportPrivateKeyRequest": {
+        "type": "object",
+        "properties": {
+          "privateKeyHex": {
+            "type": "string",
+            "description": "private key in hex format",
+            "nullable": true
+          },
+          "chainCodeHex": {
+            "type": "string",
+            "description": "chain code data hex",
+            "nullable": true
+          },
+          "label": {
+            "type": "string",
+            "description": "the new key label, can be used for tracing",
+            "nullable": true
+          },
+          "exportable": {
+            "type": "boolean",
+            "description": "whether the key is exportable or not",
+            "nullable": true
+          },
+          "utxoNetworkName": {
+            "$ref": "#/components/schemas/UtxoChainName"
+          },
+          "utxoChainType": {
+            "$ref": "#/components/schemas/UtxoChainType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Import Key from Private Key"
+      },
+      "ImportSecretKeyRequest": {
+        "type": "object",
+        "properties": {
+          "secretKey": {
+            "type": "string",
+            "description": "secret key in hex format",
+            "nullable": true
+          },
+          "label": {
+            "type": "string",
+            "description": "the new key label, can be used for tracing",
+            "nullable": true
+          },
+          "exportable": {
+            "type": "boolean",
+            "description": "whether the key is exportable or not",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Import Key from Secret Key"
+      },
+      "PolkadotSignRequest": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "Key Id for signing",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Polkadot Sign Request"
+      },
+      "PolkadotSignResponse": {
+        "type": "object",
+        "properties": {
+          "signedMessage": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Signed Transaction"
+      },
+      "RippleSignRequest": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "Key Id for signing",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Polkadot Sign Request"
+      },
+      "RippleSignResponse": {
+        "type": "object",
+        "properties": {
+          "signedMessage": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Signed Transaction"
+      },
+      "Signature": {
+        "type": "object",
+        "properties": {
+          "innerValue": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SignatureHint": {
+        "type": "object",
+        "properties": {
+          "innerValue": {
+            "type": "string",
+            "format": "byte",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SolanaSignRequest": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "Key Id for signing",
+            "format": "uuid"
+          },
+          "txMessage": {
+            "type": "string",
+            "description": "transaction message",
+            "format": "byte",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Solana Sign Request"
+      },
+      "SolanaSignResponse": {
+        "type": "object",
+        "properties": {
+          "signedMessage": {
+            "type": "string",
+            "description": "",
+            "format": "byte",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Signed Transaction"
+      },
+      "StellarSignRequest": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "Key Id for signing",
+            "format": "uuid"
+          },
+          "transactionHex": {
+            "type": "string",
+            "description": "hash in hex format",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Stellar Sign Request"
+      },
+      "TonSignRequest": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "Key Id for signing",
+            "format": "uuid"
+          },
+          "messageCell": {
+            "type": "string",
+            "description": "transaction message",
+            "format": "byte",
+            "nullable": true
+          },
+          "messageState": {
+            "type": "string",
+            "description": "transaction message",
+            "nullable": true
+          },
+          "destination": {
+            "type": "string",
+            "description": "transaction message",
+            "nullable": true
+          },
+          "source": {
+            "type": "string",
+            "description": "Key Id for signing",
+            "nullable": true
+          },
+          "importFee": {
+            "type": "string",
+            "description": "transaction message",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Ton Sign Request"
+      },
+      "TonSignResponse": {
+        "type": "object",
+        "properties": {
+          "signedCell": {
+            "type": "string",
+            "description": "",
+            "format": "byte",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Signed Transaction"
+      },
+      "TronSignRequest": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "Key Id for signing",
+            "format": "uuid"
+          },
+          "transactionHex": {
+            "type": "string",
+            "description": "hash in hex format",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Evm Sign Request"
+      },
+      "TronSignResponse": {
+        "type": "object",
+        "properties": {
+          "signedMessage": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Signed Transaction"
+      },
+      "UtxoChainName": {
+        "enum": [
+          "Bitcoin",
+          "Dogecoin",
+          "Litecoin"
+        ],
+        "type": "string",
+        "description": "Utxo Chain Name"
+      },
+      "UtxoChainType": {
+        "enum": [
+          "MainNet",
+          "TestNet",
+          "RegTest"
+        ],
+        "type": "string",
+        "description": "Utxo Chain type"
+      },
+      "UtxoSignRequest": {
+        "type": "object",
+        "properties": {
+          "keyId": {
+            "type": "string",
+            "description": "Key Id for signing",
+            "format": "uuid"
+          },
+          "txPsbt": {
+            "type": "string",
+            "description": "Key Id for signing",
+            "nullable": true
+          },
+          "utxoNetworkName": {
+            "$ref": "#/components/schemas/UtxoChainName"
+          },
+          "utxoChainType": {
+            "$ref": "#/components/schemas/UtxoChainType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "Utxo Sign Request"
+      },
+      "UtxoSignResponse": {
+        "type": "object",
+        "properties": {
+          "signedPsbt": {
+            "type": "string",
+            "description": "",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Signed Transaction"
+      }
+    }
+  }
+}
