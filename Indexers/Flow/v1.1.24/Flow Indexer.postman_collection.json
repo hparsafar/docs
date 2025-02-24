@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "7125221e-d013-482b-959f-ded9cef765e4",
+		"name": "Stellar Indexer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38896408"
+	},
+	"item": [
+		{
+			"name": "Get Range Of Block",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeyStellar}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query GetRangeofLedgers  {\r\n  blockRange(sBlock: 104452125, lBlock: 104452128) {\r\n    blockHeight\r\n    blockHash\r\n    parentBlockHash\r\n    timestamp\r\n    transactions {\r\n      blockHeight\r\n      blockHash\r\n      transactionHash\r\n      error\r\n      status\r\n      events {\r\n        blockHeight\r\n        transactionHash\r\n        from\r\n        to\r\n        amount\r\n        symbol\r\n        type\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{hostFlow}}",
+					"host": [
+						"{{hostFlow}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{apiKeyStellar}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetRangeofLedgers  {\r\n  blockRange(sBlock: 104452125, lBlock: 104452128) {\r\n    blockHeight\r\n    blockHash\r\n    parentBlockHash\r\n    timestamp\r\n    transactions {\r\n      blockHeight\r\n      blockHash\r\n      transactionHash\r\n      error\r\n      status\r\n      events {\r\n        blockHeight\r\n        transactionHash\r\n        from\r\n        to\r\n        amount\r\n        symbol\r\n        type\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{hostFlow}}",
+							"host": [
+								"{{hostFlow}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/graphql-response+json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Feb 2025 07:37:33 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"blockRange\": [\n            {\n                \"blockHeight\": 104452125,\n                \"blockHash\": \"d10dea4e49f43c7795029167502cd830e01ebd2cab6f2f7aa6544460bc5c83f9\",\n                \"parentBlockHash\": \"13adbfe98eb7521f6098a93c08fc24349ec74de26dba092a4eaf2b843e5d636c\",\n                \"timestamp\": \"2025-02-23 07:34:03\",\n                \"transactions\": []\n            },\n            {\n                \"blockHeight\": 104452126,\n                \"blockHash\": \"7bf7c3994607c3f280a6ab370b6a20ce1f39844516e1e8b1737e8a25eea144a5\",\n                \"parentBlockHash\": \"d10dea4e49f43c7795029167502cd830e01ebd2cab6f2f7aa6544460bc5c83f9\",\n                \"timestamp\": \"2025-02-23 07:34:03\",\n                \"transactions\": []\n            },\n            {\n                \"blockHeight\": 104452127,\n                \"blockHash\": \"dc5de8cb9e83b8029266013c82e8c8514faad9a678e4ba20ed793537748c30b8\",\n                \"parentBlockHash\": \"7bf7c3994607c3f280a6ab370b6a20ce1f39844516e1e8b1737e8a25eea144a5\",\n                \"timestamp\": \"2025-02-23 07:34:04\",\n                \"transactions\": []\n            },\n            {\n                \"blockHeight\": 104452128,\n                \"blockHash\": \"eb725022923e33214b64bccaff25cc769de8e28d5b7fbbc303925da370f88afe\",\n                \"parentBlockHash\": \"dc5de8cb9e83b8029266013c82e8c8514faad9a678e4ba20ed793537748c30b8\",\n                \"timestamp\": \"2025-02-23 07:34:05\",\n                \"transactions\": [\n                    {\n                        \"blockHeight\": 104452128,\n                        \"blockHash\": \"eb725022923e33214b64bccaff25cc769de8e28d5b7fbbc303925da370f88afe\",\n                        \"transactionHash\": \"5252cd507324d40be7aa844dd9c413f60d49d420f3bfafab8ce4d2cc31f193ac\",\n                        \"error\": \"\",\n                        \"status\": \"Sealed\",\n                        \"events\": [\n                            {\n                                \"blockHeight\": 104452128,\n                                \"transactionHash\": \"5252cd507324d40be7aa844dd9c413f60d49d420f3bfafab8ce4d2cc31f193ac\",\n                                \"from\": null,\n                                \"to\": \"0x20d653c05da5df8a\",\n                                \"amount\": \"11895.76039274\",\n                                \"symbol\": \"FLOW\",\n                                \"type\": \"A.1654653399040a61.FlowToken.TokensDeposited\"\n                            },\n                            {\n                                \"blockHeight\": 104452128,\n                                \"transactionHash\": \"5252cd507324d40be7aa844dd9c413f60d49d420f3bfafab8ce4d2cc31f193ac\",\n                                \"from\": \"0xc9c3909efdb2edbe\",\n                                \"to\": null,\n                                \"amount\": \"11895.76039274\",\n                                \"symbol\": \"FLOW\",\n                                \"type\": \"A.1654653399040a61.FlowToken.TokensWithdrawn\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Transfer By Transaction Hash",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeyStellar}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query TransactionDetails {\r\n  transactions(\r\n    transactionHash: \"4ca5b2d8d8e937923486788c4c0983d9c9e6666526d736961669a577160b02bf\"\r\n  ) {\r\n      blockHeight\r\n      blockHash\r\n      transactionHash\r\n      error\r\n      status\r\n      events {\r\n        blockHeight\r\n        transactionHash\r\n        from\r\n        to\r\n        amount\r\n        symbol\r\n        type\r\n      }\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{hostFlow}}",
+					"host": [
+						"{{hostFlow}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{apiKeyStellar}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query TransactionDetails {\r\n  transactions(\r\n    transactionHash: \"4ca5b2d8d8e937923486788c4c0983d9c9e6666526d736961669a577160b02bf\"\r\n  ) {\r\n      blockHeight\r\n      blockHash\r\n      transactionHash\r\n      error\r\n      status\r\n      events {\r\n        blockHeight\r\n        transactionHash\r\n        from\r\n        to\r\n        amount\r\n        symbol\r\n        type\r\n      }\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{hostFlow}}",
+							"host": [
+								"{{hostFlow}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/graphql-response+json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Feb 2025 07:24:18 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"transactions\": [\n            {\n                \"blockHeight\": 104451101,\n                \"blockHash\": \"fac8d161687d0e9f82cc1f70747797c6eb1c716a7b1c6b5f29dab92125dad0bb\",\n                \"transactionHash\": \"4ca5b2d8d8e937923486788c4c0983d9c9e6666526d736961669a577160b02bf\",\n                \"error\": \"\",\n                \"status\": \"Sealed\",\n                \"events\": [\n                    {\n                        \"blockHeight\": 104451101,\n                        \"transactionHash\": \"4ca5b2d8d8e937923486788c4c0983d9c9e6666526d736961669a577160b02bf\",\n                        \"from\": null,\n                        \"to\": \"0xcc96d987317f0342\",\n                        \"amount\": \"59.99512442\",\n                        \"symbol\": \"FLOW\",\n                        \"type\": \"A.1654653399040a61.FlowToken.TokensDeposited\"\n                    },\n                    {\n                        \"blockHeight\": 104451101,\n                        \"transactionHash\": \"4ca5b2d8d8e937923486788c4c0983d9c9e6666526d736961669a577160b02bf\",\n                        \"from\": \"0x68da18f20e98a7b6\",\n                        \"to\": null,\n                        \"amount\": \"59.99512442\",\n                        \"symbol\": \"FLOW\",\n                        \"type\": \"A.1654653399040a61.FlowToken.TokensWithdrawn\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Transfer By From Address",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeyStellar}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query TransactionDetails {\r\n  transactions(\r\n    fromAddress: \"0xc353b9d685ec427d\"\r\n    limit: 5\r\n    skip: 0\r\n  ) {\r\n      blockHeight\r\n      blockHash\r\n      transactionHash\r\n      error\r\n      status\r\n      events {\r\n        blockHeight\r\n        transactionHash\r\n        from\r\n        to\r\n        amount\r\n        symbol\r\n        type\r\n      }\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{hostFlow}}",
+					"host": [
+						"{{hostFlow}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{apiKeyStellar}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query TransactionDetails {\r\n  transactions(\r\n    fromAddress: \"0xc353b9d685ec427d\"\r\n    limit: 5\r\n    skip: 0\r\n  ) {\r\n      blockHeight\r\n      blockHash\r\n      transactionHash\r\n      error\r\n      status\r\n      events {\r\n        blockHeight\r\n        transactionHash\r\n        from\r\n        to\r\n        amount\r\n        symbol\r\n        type\r\n      }\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{hostFlow}}",
+							"host": [
+								"{{hostFlow}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/graphql-response+json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Feb 2025 08:13:34 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"transactions\": [\n            {\n                \"blockHeight\": 104454817,\n                \"blockHash\": \"6a7dfe79eda18a981714704273bae6712f5b64ebdf0eae960e18526725fda0ec\",\n                \"transactionHash\": \"a4da983681fc596668db45554d1dfdf205e30eba443fae6b29d68f51600d7eab\",\n                \"error\": \"\",\n                \"status\": \"Sealed\",\n                \"events\": [\n                    {\n                        \"blockHeight\": 104454817,\n                        \"transactionHash\": \"a4da983681fc596668db45554d1dfdf205e30eba443fae6b29d68f51600d7eab\",\n                        \"from\": null,\n                        \"to\": null,\n                        \"amount\": \"244.06665801\",\n                        \"symbol\": \"FLOW\",\n                        \"type\": \"A.1654653399040a61.FlowToken.TokensDeposited\"\n                    },\n                    {\n                        \"blockHeight\": 104454817,\n                        \"transactionHash\": \"a4da983681fc596668db45554d1dfdf205e30eba443fae6b29d68f51600d7eab\",\n                        \"from\": null,\n                        \"to\": \"0xe452a2f5665728f5\",\n                        \"amount\": \"244.06665801\",\n                        \"symbol\": \"FLOW\",\n                        \"type\": \"A.1654653399040a61.FlowToken.TokensDeposited\"\n                    },\n                    {\n                        \"blockHeight\": 104454817,\n                        \"transactionHash\": \"a4da983681fc596668db45554d1dfdf205e30eba443fae6b29d68f51600d7eab\",\n                        \"from\": \"0xc353b9d685ec427d\",\n                        \"to\": null,\n                        \"amount\": \"244.06665801\",\n                        \"symbol\": \"FLOW\",\n                        \"type\": \"A.1654653399040a61.FlowToken.TokensWithdrawn\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Transfer By To Address",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeyStellar}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query TransactionDetails {\r\n  transactions(\r\n    toAddress: \"0x20d653c05da5df8a\"\r\n    limit: 5\r\n    skip: 0\r\n  ) {\r\n    blockHeight\r\n      blockHash\r\n      transactionHash\r\n      error\r\n      status\r\n      events {\r\n        blockHeight\r\n        transactionHash\r\n        from\r\n        to\r\n        amount\r\n        symbol\r\n        type\r\n      }\r\n    }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{hostFlow}}",
+					"host": [
+						"{{hostFlow}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{apiKeyStellar}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query TransactionDetails {\r\n  transactions(\r\n    toAddress: \"0x20d653c05da5df8a\"\r\n    limit: 5\r\n    skip: 0\r\n  ) {\r\n    blockHeight\r\n      blockHash\r\n      transactionHash\r\n      error\r\n      status\r\n      events {\r\n        blockHeight\r\n        transactionHash\r\n        from\r\n        to\r\n        amount\r\n        symbol\r\n        type\r\n      }\r\n    }\r\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{hostFlow}}",
+							"host": [
+								"{{hostFlow}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/graphql-response+json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Feb 2025 07:37:18 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"transactions\": [\n            {\n                \"blockHeight\": 104452128,\n                \"blockHash\": \"eb725022923e33214b64bccaff25cc769de8e28d5b7fbbc303925da370f88afe\",\n                \"transactionHash\": \"5252cd507324d40be7aa844dd9c413f60d49d420f3bfafab8ce4d2cc31f193ac\",\n                \"error\": \"\",\n                \"status\": \"Sealed\",\n                \"events\": [\n                    {\n                        \"blockHeight\": 104452128,\n                        \"transactionHash\": \"5252cd507324d40be7aa844dd9c413f60d49d420f3bfafab8ce4d2cc31f193ac\",\n                        \"from\": null,\n                        \"to\": \"0x20d653c05da5df8a\",\n                        \"amount\": \"11895.76039274\",\n                        \"symbol\": \"FLOW\",\n                        \"type\": \"A.1654653399040a61.FlowToken.TokensDeposited\"\n                    },\n                    {\n                        \"blockHeight\": 104452128,\n                        \"transactionHash\": \"5252cd507324d40be7aa844dd9c413f60d49d420f3bfafab8ce4d2cc31f193ac\",\n                        \"from\": \"0xc9c3909efdb2edbe\",\n                        \"to\": null,\n                        \"amount\": \"11895.76039274\",\n                        \"symbol\": \"FLOW\",\n                        \"type\": \"A.1654653399040a61.FlowToken.TokensWithdrawn\"\n                    }\n                ]\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Latest Block",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "{{apiKeyStellar}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query Query {\r\n  latestBlock {\r\n    blockHeight\r\n    blockHash\r\n    parentBlockHash\r\n    timestamp\r\n    transactions {\r\n      blockHeight\r\n      blockHash\r\n      transactionHash\r\n      error\r\n      status\r\n      events {\r\n        blockHeight\r\n        transactionHash\r\n        from\r\n        to\r\n        amount\r\n        symbol\r\n        type\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "{{hostFlow}}",
+					"host": [
+						"{{hostFlow}}"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-api-key",
+								"value": "{{apiKeyStellar}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query Query {\r\n  latestBlock {\r\n    blockHeight\r\n    blockHash\r\n    parentBlockHash\r\n    timestamp\r\n    transactions {\r\n      blockHeight\r\n      blockHash\r\n      transactionHash\r\n      error\r\n      status\r\n      events {\r\n        blockHeight\r\n        transactionHash\r\n        from\r\n        to\r\n        amount\r\n        symbol\r\n        type\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "{{hostFlow}}",
+							"host": [
+								"{{hostFlow}}"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/graphql-response+json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 23 Feb 2025 08:14:23 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Kestrel"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"latestBlock\": {\n            \"blockHeight\": 104455102,\n            \"blockHash\": \"4c128af537dcd0583b56404ebd85c2d79dc8781a1cd31b1cc02795be1cf7fca6\",\n            \"parentBlockHash\": \"c3db298f1e7bf6bf76b0e9866a51c5179498b627b427b03a5f9ba6d17a2f8c60\",\n            \"timestamp\": \"2025-02-23 08:13:44\",\n            \"transactions\": []\n        }\n    }\n}"
+				}
+			]
+		}
+	]
+}
