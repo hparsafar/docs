@@ -1,0 +1,59 @@
+{
+    "info": {
+        "name": "Webhooks API Collection",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Register Webhook",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "x-api-key",
+                        "value": "{{webhookApiKey}}",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/{{network}}/webhooks/register",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["{{network}}", "webhooks", "register"]
+                },
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n                        \"filter\": \"event_filter\",\n                        \"hookAddress\": \"https://example.com/webhook\",\n                        \"expiryTimeSpan\": \"00:10:00\",\n                        \"walletAddresses\": [\"0x12345\"]\n                    }",
+                    "options": {
+                        "raw": {
+                            "language": "json"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Unregister Webhook",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "x-api-key",
+                        "value": "{{webhookApiKey}}",
+                        "type": "text"
+                    }
+                ],
+                "url": {
+                    "raw": "{{baseUrl}}/{{network}}/webhooks/unregister?id={{webhookId}}",
+                    "host": ["{{baseUrl}}"],
+                    "path": ["{{network}}", "webhooks", "unregister"],
+                    "query": [
+                        {
+                            "key": "id",
+                            "value": "{{webhookId}}"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
